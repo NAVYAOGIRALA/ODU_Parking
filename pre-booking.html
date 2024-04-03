@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-booking</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+<link rel="stylesheet" href="pre-booking.css">
+</head>
+<body>
+<div class="booking-container">
+    <div class="top-bar">
+        <div class="logo">
+            <img src="clg_logo.png" alt="Logo">
+        </div>
+        <div class="action-buttons">
+            <button><i class="fas fa-home" onclick="window.location.href='login.html'"></i></button>
+            <button><i class="fas fa-cog" onclick="window.location.href='settings.html'"></i></button>
+            <button><i class="fas fa-arrow-left" onclick="window.location.href='main_screen.html'"></i></button>
+        </div>
+    </div>
+    <h2>Pre-book a Parking Spot</h2>
+    <form id="bookingForm" onsubmit="return redirecttoConfirmation()">
+        <div class="input-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="input-group">
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <div class="input-group">
+            <label for="location">Location</label>
+            <input type="search" id="location" name="location" required>
+        </div>
+        <button type="submit">Confirm Booking</button>
+    </form>
+</div>
+<script>
+    function redirecttoConfirmation() {
+        var currentDate = new Date();
+        var selectedDate = new Date(document.getElementById("date").value);
+
+        // Check if selected date is within the allowed range
+        var minDate = new Date();
+        var maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 1);
+
+        if (selectedDate < minDate || selectedDate > maxDate) {
+            alert("Please select a valid date");
+            return false;
+        }
+        var url = "confirmation.html?date=" + selectedDate.toISOString().split('T')[0] + "&time=" + document.getElementById("time").value + "&location=" + document.getElementById("location").value;
+        window.location.href = url;
+
+        return false;
+    }
+</script>
+</body>
+</html>

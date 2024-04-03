@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.settings-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-detail-box {
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    margin-bottom: 20px; /* Add margin between boxes */
+}
+
+.user-detail {
+    padding: 20px; /* Add padding inside the box */
+}
+
+.user-detail p {
+    margin: 10px 0;
+}
+
+.user-detail p strong {
+    font-weight: bold;
+}
+
+.user-detail p input[type="text"],
+.user-detail p input[type="email"] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: normal;
+    color: #333; /* Darken text color */
+}
+
+.user-detail p input[type="text"]:focus,
+.user-detail p input[type="email"]:focus {
+    border-bottom: 1px solid #333; /* Add underline when focused */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="login-container">
+    <div class="logo">
+        <img src="clg_logo.png" alt="Logo">
+    </div>
+    <h2>ODU PARKING</h2>
+    <form id="loginForm" onsubmit="redirecttoMainScreen(event)">
+        <div class="input-group">
+            <label for="midasId">MIDAS ID</label>
+            <input type="text" id="midasId" name="midasId" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit">Sign In</button>
+            <button type="button" onclick="window.location.href='guest_login.html'">Guest Login</button>
+        </div>
+        <a href="#" onclick="alert('Go to ODU account and reset your password')">Forgot Password?</a>
+    </form>
+    
+</div>
+<script>
+    function redirecttoMainScreen(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get the MIDAS ID and password values
+        var midasId = document.getElementById("midasId").value;
+        var password = document.getElementById("password").value;
+        
+        // Check if either field is empty
+        if (midasId.trim() === '' || password.trim() === '') {
+            alert("Please enter both MIDAS ID and password.");
+            return;
+        }
+
+        // If both fields are filled, redirect to main_screen.html
+        window.location.href = "main_screen.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="confirmation.css">
+</head>
+<body>
+<div class="confirmation-container">
+    <div class="top-bar">
+        <div class="logo">
+            <img src="clg_logo.png" alt="Logo">
+        </div>
+        <div class="action-buttons">
+            <button><i class="fas fa-cog" onclick="window.location.href='settings.html'"></i> </button>
+            <button><i class="fas fa-sign-out-alt" onclick="window.location.href='login.html'"></i> </button>
+        </div>
+    </div>
+    <h2>Booking Confirmed!!</h2>
+    <p>Your parking spot at Perry Library Parking has been reserved</p>
+    <p>You will be notified when your parking spot is ready</p>
+    <p><strong>Date:</strong> <span id="selected-date"></span></p>
+    <p><strong>Time:</strong> <span id="selected-time"></span></p>
+    <p><strong>Location:</strong><span id="selected-location"></span></p>
+    <div class="main-screen-button">
+        <button onclick="window.location.href='main_screen.html'">Return to Main Screen</button>
+    </div>
+</div>
+<script>
+    window.onload = function() {
+        // Retrieve URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const date = urlParams.get('date');
+        const time = urlParams.get('time');
+        const location = urlParams.get('location');
+
+        // Update the DOM with the retrieved date and time
+        document.getElementById('selected-date').textContent = date;
+        document.getElementById('selected-time').textContent = time;
+        document.getElementById('selected-location').textContent = location;
+    };
+</script>
+</body>
+</html>

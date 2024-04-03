@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Screen</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="main_screen.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="top-bar">
+        <div class="logo">
+            <img src="clg_logo.png" alt="Logo">
+        </div>
+        <div class="action-buttons">
+            <button><i class="fas fa-home" onclick="window.location.href='login.html'"></i> </button>
+            <button><i class="fas fa-cog" onclick="window.location.href='settings.html'"></i> </button>
+        </div>
+    </div>
+    <h2>Parking Spots Near You</h2>
+    <div class="search-bar">
+        <input type="text" id="locationInput" placeholder="Search parking spots...">
+        <button>Search</button>
+    </div>
+    <div class="filter-options">
+        <input type="checkbox" id="freeParking" name="freeParking">
+        <label for="freeParking">Free Parking</label>
+        <input type="checkbox" id="paidParking" name="paidParking">
+        <label for="paidParking">Paid Parking</label>
+    </div>
+    <div class="image-container">
+        <a href="https://ww1.odu.edu/about/visitors/campus-map"><img src="maps_icon.jpeg" alt="Clickable Image"></a>
+    </div>
+    <div class="book-now-button">
+            <button type="button" onclick="redirecttoConfirmation()">Book Now</button>
+            <button type="button" onclick="redirecttoPreBook()">Pre-Book</button>
+    </div>
+</div>
+<script>
+    function redirecttoConfirmation() {
+        var location = document.getElementById("locationInput").value;
+        var currentDate = new Date();
+        var date = currentDate.toLocaleString('en-US', {timeZone: 'America/New_York'}).split(',')[0]; // Current date in MM/DD/YYYY format
+        var time = currentDate.toLocaleString('en-US', {timeZone: 'America/New_York', hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric'}); // Current time in 12-hour format
+        var url = "confirmation.html?date=" + date + "&time=" + time + "&location=" + location;
+        window.location.href = url; // Redirecting to confirmation page with parameters
+    }
+
+    function redirecttoPreBook() {
+        window.location.href = "pre-booking.html"; // Redirecting to pre-booking page
+    }
+</script>
+
+</body>
+</html>

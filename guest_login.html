@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Login</title>
+<link rel="stylesheet" href="guest_login.css">
+<style>
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px; /* Optional: Add some margin below the logo */
+    }
+</style>
+</head>
+<body>
+<div class="login-container">
+    <div class="logo">
+        <img src="clg_logo.png" alt="College Logo">
+    </div>
+    <h2>Guest Login</h2>
+    <form id="guestLoginForm" onsubmit="loginAsGuest(event)">
+        <div class="input-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit">Login</button>
+            <button type="button" onclick="window.location.href='login.html'">Back to Login</button>
+        </div>
+    </form>
+</div>
+<script>
+    function loginAsGuest(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        
+        // Here you can add further validation if needed
+        
+        // Redirect to main_screen.html
+        window.location.href = "main_screen.html";
+    }
+</script>
+</body>
+</html>

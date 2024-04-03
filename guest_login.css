@@ -1,0 +1,61 @@
+/* guest_login.css */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center align text */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Optional: Add some margin below the logo */
+}
+
+.logo img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+h2 {
+    margin-bottom: 20px; /* Optional: Add some margin below the heading */
+}
+
+.input-group {
+    margin-bottom: 20px; /* Optional: Add some margin below the input group */
+}
+
+label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Optional: Add some margin below labels */
+}
+
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    margin-bottom: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.form-actions button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.form-actions button:hover {
+    background-color: #0056b3;
+}
